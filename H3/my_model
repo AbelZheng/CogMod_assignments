@@ -1,0 +1,26 @@
+digraph {
+	graph [label="My Model"]
+	psiN [label="psiN
+~
+Uniform" shape=ellipse]
+	psiS [label="psiS
+~
+Uniform" shape=ellipse]
+	subgraph cluster20 {
+		ki [label="ki
+~
+Binomial" shape=ellipse style=filled]
+		theta [label="theta
+~
+Deterministic" shape=box]
+		zi [label="zi
+~
+Bernoulli" shape=ellipse]
+		label=20 labeljust=r labelloc=b style=rounded
+	}
+	psiS -> psiN
+	psiN -> theta
+	zi -> theta
+	psiS -> theta
+	theta -> ki
+}
